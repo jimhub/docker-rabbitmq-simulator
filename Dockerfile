@@ -1,7 +1,8 @@
-FROM node:latest
-MAINTAINER galan
+FROM alpine:latest
+MAINTAINER jliljenq
 
-RUN cd /tmp && \
+RUN apk --update --no-progress add nodejs bash git && \
+	cd /tmp && \
     git clone https://github.com/RabbitMQSimulator/RabbitMQSimulator.git && \
     cd RabbitMQSimulator && \
     npm install
