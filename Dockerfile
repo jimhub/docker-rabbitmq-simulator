@@ -5,7 +5,8 @@ RUN apk --update --no-progress add nodejs bash git && \
 	cd /tmp && \
     git clone https://github.com/RabbitMQSimulator/RabbitMQSimulator.git && \
     cd RabbitMQSimulator && \
-    npm install
+    npm install && \
+	cp config.sample.json config.json
 
 CMD node /tmp/RabbitMQSimulator/app.js
 
